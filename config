@@ -1,0 +1,24 @@
+# Download video and audio separately in best available format
+-f "bv+ba/b"
+
+# Download proper Dutch and English subtitles and automatically created subtitles and merge them in the video
+-o '%(title)s [%(channel)s] [%(id)s].%(ext)s'
+--convert-thumbnails png
+--embed-thumbnail
+--extractor-args "youtube:skip=translated_subs"
+--embed-subs
+--sub-lang "en, nl"
+--add-metadata
+--embed-metadata
+
+# With this, --merge mkv will be used most of the time, and remux will be skipped since the "video is already in mkv". In the edge cases where merge is not applicable, --remux will take effect. Since mkv supports all codecs, you have no reason to use --recode with it
+--remux mkv --merge mkv
+
+# Number of simultaneous downloading of parts
+-N 2
+
+# Keep track of which videos you have already downloaded in the download folder
+--download-archive archive_list.txt
+
+# Configure such that yt-dlp uses the aria2 external downloader
+--downloader aria2c --downloader-args aria2c:'--min-split-size=10M --max-connection-per-server=2 --max-concurrent-downloads=2 --split=6'

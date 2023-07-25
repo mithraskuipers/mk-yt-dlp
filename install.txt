@@ -1,0 +1,15 @@
+sudo apt-get update -y ;
+sudo apt-get install pip -y ;
+sudo apt-get install aria2 ffmpeg -y ;
+
+# UBUNTU
+python3 -m pip install -U yt-dlp ;
+
+# DEBIAN 12
+python3 -m pip install -U yt-dlp --break-system-packages ;
+
+pi zero met raspbian desktop:
+pip3 install yt-dlp
+python3 -m pip install -U yt-dlp
+sudo apt-get install aria2 ffmpeg
+echo "export PATH="/home/mkuipers/.local/bin:$PATH" >> ~/.bashrc"
