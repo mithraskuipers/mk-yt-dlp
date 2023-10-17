@@ -1,1 +1,4 @@
-python3 -m pip install --upgrade yt-dlp
+python3 -m pip install --upgrade yt-dlp ;
+
+
+python3 -m pip install --upgrade yt-dlp --break-system-packages ;
