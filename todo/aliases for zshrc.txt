@@ -1,0 +1,11 @@
+[MANUAL WAY]
+
+Edit ~/.zshrc and add these entries.
+
+export PATH="/home/mkuipers/.local/bin:$PATH"
+alias yt="yt-dlp"
+
+
+# CONFIG STILL TODO
+alias yta="yt-dlp --config-location ~/.config/yt-dlp/config_audio"
+alias ytc="yt-dlp --config-location ~/.config/yt-dlp/config_comments"
