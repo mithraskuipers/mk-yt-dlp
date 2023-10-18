@@ -1,7 +1,15 @@
 import os
 import requests
 import re
-import wget
+
+def download_file(url, output_path):
+    response = requests.get(url, stream=True)
+    if response.status_code == 200:
+        with open(output_path, 'wb') as file:
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+        return True
+    return False
 
 def get_latest_ytdlp_release():
     url = "https://github.com/yt-dlp/yt-dlp/releases"
@@ -37,8 +45,10 @@ latest_release_url = get_latest_ytdlp_release()
 if latest_release_url:
     print("Downloading latest yt-dlp Linux release...")
     try:
-        wget.download(latest_release_url, output_path)
-        print("\nDownload completed. File saved in 'latest_yt-dlp_linux' subfolder.")
+        if download_file(latest_release_url, output_path):
+            print("\nDownload completed. File saved in 'latest_yt-dlp_linux' subfolder.")
+        else:
+            print("\nDownload failed.")
     except Exception as e:
         print(f"Download failed: {e}")
 else:
