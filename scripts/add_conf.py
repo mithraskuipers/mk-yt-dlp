@@ -3,7 +3,7 @@ import shutil
 
 def copy_latest_yt_dlp_config():
     # Source directory where yt-dlp.conf is located
-    source_directory = os.path.join(os.getcwd(), "latest_yt-dlp_config")
+    source_directory = os.path.join(os.getcwd(), "latest_yt-dlp_configs")
 
     # Source path for yt-dlp.conf
     source_config_path = os.path.join(source_directory, "yt-dlp.conf")
