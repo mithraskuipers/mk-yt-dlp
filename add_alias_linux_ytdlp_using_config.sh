@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the alias and command
-alias_name="ytmp3"
-command="yt-dlp --config-location /etc/yt-dlp_mp3.conf"
+alias_name="yt"
+command="yt-dlp --config-location /etc/yt-dlp_linux.conf"
 # Get the current user's home directory
 home_directory="$HOME"
 bashrc_file="$home_directory/.bashrc"
@@ -12,7 +12,7 @@ if grep -q "alias $alias_name=" "$bashrc_file"; then
     echo "Alias '$alias_name' already exists in $bashrc_file."
 else
     # Add the alias to .bashrc
-    echo -e "\n# Alias for using yt-dlp with custom config" >> "$bashrc_file"
+    echo -e "\n# Alias for using yt-dlp_linux with custom config" >> "$bashrc_file"
     echo "alias $alias_name='$command'" >> "$bashrc_file"
     echo "Alias '$alias_name' added to $bashrc_file."
     # Apply the alias in the current shell session
