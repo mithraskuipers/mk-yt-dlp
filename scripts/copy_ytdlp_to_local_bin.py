@@ -2,8 +2,8 @@ import os
 import shutil
 
 def move_ytdlp_binary():
-    # Source path (yt-dlp_linux binary in latest_yt-dlp_linux folder)
-    source_path = os.path.join(os.getcwd(), "latest_yt-dlp_linux", "yt-dlp_linux")
+    # Source path (yt-dlp binary in latest_yt-dlp folder)
+    source_path = os.path.join(os.getcwd(), "latest_yt-dlp", "yt-dlp")
     
     # Destination path
     destination_path = os.path.expanduser("/usr/local/bin")
@@ -15,7 +15,7 @@ def move_ytdlp_binary():
         # Destination path with the new binary name
         destination_binary_path = os.path.join(destination_path, "yt-dlp")
         
-        # Copy the yt-dlp_linux binary and rename it to yt-dlp
+        # Copy the yt-dlp binary and rename it to yt-dlp
         shutil.copy2(source_path, destination_binary_path)
         
         # Set execute permissions for the copied binary
