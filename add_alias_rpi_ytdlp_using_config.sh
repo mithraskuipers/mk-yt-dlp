@@ -2,7 +2,7 @@
 
 # Define the alias and command
 alias_name="yt"
-command="yt-dlp --config-location /etc/yt-dlp.conf"
+command="yt-dlp --config-location /etc/yt-dlp_rpi.conf"
 # Get the current user's home directory
 home_directory="$HOME"
 bashrc_file="$home_directory/.bashrc"
