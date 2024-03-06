@@ -18,13 +18,15 @@ def run_scripts(system_type):
         fetch_ytdlp_script = "./scripts/fetch_latest_yt-dlp_linux.py"
         copy_ytdlp_script = "./scripts/copy_ytdlp_linux_to_local_bin.py"
         add_conf = "./scripts/add_conf_linux.py"
+        add_conf_audio = "./scripts/add_conf_linux_audio.py"
 
     # List of script filenames in the desired order
     script_filenames = [
         "./scripts/install_aria2c.py",
         fetch_ytdlp_script,
         copy_ytdlp_script,
-        add_conf
+        add_conf,
+        add_conf_audio
     ]
 
     # Get the current directory
