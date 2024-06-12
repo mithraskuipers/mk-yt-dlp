@@ -19,5 +19,8 @@ else
     alias $alias_name="$command"
 fi
 
+# Source the .bashrc file to apply the changes in the current session
+source "$bashrc_file"
+
 # Display the path of the file where the alias has been added
-echo "Alias '$alias_name' added to $bashrc_file."
+echo "Alias '$alias_name' added to $bashrc_file and sourced for the current session."
