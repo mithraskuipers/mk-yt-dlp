@@ -46,12 +46,24 @@ def run_scripts(system_type):
         else:
             print(f"Error: {script_filename} not found.")
 
-if __name__ == "__main__":
-    # Determine the system type based on provided arguments
-    if len(sys.argv) > 1:
-        system_type = sys.argv[1]
-    else:
-        system_type = "default"
+def select_system_type():
+    print("Select your operating system:")
+    print("1. Linux")
+    print("2. Raspberry Pi (Raspbian)")
+    
+    while True:
+        choice = input("Enter your choice (1 or 2): ")
+        if choice == '1':
+            return "linux"
+        elif choice == '2':
+            return "rpi"
+        else:
+            print("Invalid choice. Please try again.")
 
-    # Run the scripts in the specified order with or without sudo
+if __name__ == "__main__":
+    # Prompt user to select the system type
+    system_type = select_system_type()
+    
+    # Run the scripts in the specified order
     run_scripts(system_type)
+
