@@ -2,22 +2,28 @@ import os
 import shutil
 
 def copy_latest_yt_dlp_config():
-    # Source directory where yt-dlp_rpi.conf is located
+    # Source directory where the config files are located
     source_directory = os.path.join(os.getcwd(), "configs")
 
-    # Source path for yt-dlp_rpi.conf
-    source_config_path = os.path.join(source_directory, "yt-dlp_rpi.conf")
+    # Source paths for the specific config files
+    source_config_audio_path = os.path.join(source_directory, "yt-dlp-rpi-audio.conf")
+    source_config_videoaudio_path = os.path.join(source_directory, "yt-dlp-rpi-videoaudio.conf")
 
-    # Destination path for yt-dlp_rpi.conf in /etc directory
-    destination_path = "/etc/yt-dlp_rpi.conf"
+    # Destination paths for the config files in /etc directory
+    destination_audio_path = "/etc/yt-dlp-rpi-audio.conf"
+    destination_videoaudio_path = "/etc/yt-dlp-rpi-videoaudio.conf"
 
     try:
-        # Copy the yt-dlp_rpi.conf file to /etc/yt-dlp_rpi.conf
-        shutil.copy2(source_config_path, destination_path)
+        # Copy the yt-dlp-rpi-audio.conf file to /etc
+        shutil.copy2(source_config_audio_path, destination_audio_path)
+        print(f"yt-dlp-rpi-audio.conf copied to {destination_audio_path}.")
 
-        print(f"yt-dlp_rpi.conf copied to {destination_path}.")
+        # Copy the yt-dlp-rpi-videoaudio.conf file to /etc
+        shutil.copy2(source_config_videoaudio_path, destination_videoaudio_path)
+        print(f"yt-dlp-rpi-videoaudio.conf copied to {destination_videoaudio_path}.")
+        
     except Exception as e:
         print(f"Error: {e}")
 
-# Call the function to copy yt-dlp_rpi.conf
+# Call the function to copy the config files
 copy_latest_yt_dlp_config()
