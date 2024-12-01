@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the alias and command
-alias_name="ytaudio"
-command="yt-dlp --config-location /etc/yt-dlp_linux_audio.conf"
+alias_name="yta"
+command="yt-dlp --config-location /etc/yt-dlp-linux-audio.conf"
 # Get the current user's home directory
 home_directory="$HOME"
 bashrc_file="$home_directory/.bashrc"
