@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the alias and command
-alias_name="yt"
+alias_name="ytva"
 command="yt-dlp --config-location /etc/yt-dlp_linux.conf"
 # Get the current user's home directory
 home_directory="$HOME"
