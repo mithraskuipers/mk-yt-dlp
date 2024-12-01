@@ -6,10 +6,10 @@ def copy_latest_yt_dlp_linux_config():
     source_directory = os.path.join(os.getcwd(), "configs")
 
     # Source path for yt-dlp_rpi.conf
-    source_config_path = os.path.join(source_directory, "yt-dlp_linux.conf")
+    source_config_path = os.path.join(source_directory, "yt-dlp-linux.conf")
 
     # Destination path for yt-dlp_rpi.conf in /etc directory
-    destination_path = "/etc/yt-dlp_linux.conf"
+    destination_path = "/etc/yt-dlp-linux.conf"
 
     try:
         # Copy the yt-dlp_rpi.conf file to /etc/yt-dlp_rpi.conf
