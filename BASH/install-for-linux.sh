@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install ffmpeg -y ;
+
 # Variables for paths and URLs
 LATEST_RELEASE_URL="https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest"
 DOWNLOAD_DIR="$(pwd)"
