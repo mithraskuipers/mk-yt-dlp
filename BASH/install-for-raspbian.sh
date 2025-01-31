@@ -36,11 +36,11 @@ echo "Download completed. Making the yt-dlp binary executable..."
 # Make the yt-dlp binary executable
 chmod a+x "$DOWNLOAD_DIR/$YTDLP_BINARY"
 
-echo "Copying yt-dlp to $INSTALL_PATH..."
-# Copy the yt-dlp binary to /usr/local/bin
-sudo cp "$DOWNLOAD_DIR/$YTDLP_BINARY" "$INSTALL_PATH"
+echo "Copying yt-dlp to $INSTALL_PATH and renaming it..."
+# Copy and rename the yt-dlp binary to /usr/local/bin
+sudo cp "$DOWNLOAD_DIR/$YTDLP_BINARY" "$INSTALL_PATH/yt-dlp"
 if [ $? -eq 0 ]; then
-  echo "yt-dlp has been successfully installed to $INSTALL_PATH."
+  echo "yt-dlp has been successfully installed to $INSTALL_PATH as yt-dlp."
 else
   echo "Failed to copy yt-dlp to $INSTALL_PATH. Please check permissions."
   exit 1
@@ -57,9 +57,9 @@ fi
 
 # Adding aliases to ~/.bashrc
 echo "Adding aliases to $BASHRC_PATH..."
-ALIAS_LINE1="alias ytva='yt-dlp_linux --config-location /etc/yt-dlp-rpi.conf'"
-ALIAS_LINE2="alias yta='yt-dlp_linux --config-location /etc/yt-dlp-rpi-audio.conf'"
-ALIAS_LINE3="alias yt-dlp='yt-dlp_linux'"
+ALIAS_LINE1="alias ytva='yt-dlp --config-location /etc/yt-dlp-rpi.conf'"
+ALIAS_LINE2="alias yta='yt-dlp --config-location /etc/yt-dlp-rpi-audio.conf'"
+ALIAS_LINE3="alias yt-dlp='yt-dlp'"
 
 if ! grep -q "$ALIAS_LINE1" "$BASHRC_PATH"; then
   echo "$ALIAS_LINE1" >> "$BASHRC_PATH"
@@ -75,4 +75,3 @@ echo "Aliases added to $BASHRC_PATH. To use them immediately, run: source $BASHR
 
 # Inform the user that the process is complete
 echo "yt-dlp setup completed successfully."
-
