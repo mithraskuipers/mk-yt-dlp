@@ -59,6 +59,7 @@ fi
 echo "Adding aliases to $BASHRC_PATH..."
 ALIAS_LINE1="alias ytva='yt-dlp --config-location /etc/yt-dlp-linux.conf'"
 ALIAS_LINE2="alias yta='yt-dlp --config-location /etc/yt-dlp-linux-audio.conf'"
+ALIAS_LINE3="alias ytval='yt-dlp --config-location /etc/yt-dlp-linux.conf -a urls.txt'"
 
 if ! grep -q "$ALIAS_LINE1" "$BASHRC_PATH"; then
   echo "$ALIAS_LINE1" >> "$BASHRC_PATH"
@@ -66,9 +67,11 @@ fi
 if ! grep -q "$ALIAS_LINE2" "$BASHRC_PATH"; then
   echo "$ALIAS_LINE2" >> "$BASHRC_PATH"
 fi
+if ! grep -q "$ALIAS_LINE3" "$BASHRC_PATH"; then
+  echo "$ALIAS_LINE3" >> "$BASHRC_PATH"
+fi
 
 echo "Aliases added to $BASHRC_PATH. To use them immediately, run: source $BASHRC_PATH"
 
 # Inform the user that the process is complete
 echo "yt-dlp setup completed successfully."
-
